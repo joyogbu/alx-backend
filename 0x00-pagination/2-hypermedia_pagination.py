@@ -55,7 +55,8 @@ class Server:
         except IndexError:
             return []
 
-    def get_hyper(self, page: int = 1, page_size: int = 10) -> Dict[str, Union[int, None, List[List]]]:
+    def get_hyper(self, page: int = 1, page_size: int = 10) ->\
+            Dict[str, Union[int, None, List[List]]]:
         '''defining the function'''
         my_dict = {}
         res = self.dataset()
@@ -79,5 +80,5 @@ class Server:
         my_dict['data'] = my_pages
         my_dict['next_page'] = nx_page
         my_dict['prev_page'] = pv_page
-        my_dict['total_page'] = total
+        my_dict['total_pages'] = total
         return (my_dict)
