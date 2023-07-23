@@ -38,6 +38,8 @@ class Server:
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
         '''get pages and print'''
+        assert type(page) == int
+        assert type(page_size) == int
         try:
             ind_range = index_range(page, page_size)
             first = ind_range[0]
