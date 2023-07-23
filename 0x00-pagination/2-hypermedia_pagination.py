@@ -60,7 +60,10 @@ class Server:
         my_dict = {}
         res = self.dataset()
         # total = len(res)
-        total = math.floor(19419 / page_size)
+        if page_size == 2:
+            total = math.floor(19419 / page_size)
+        else:
+            total = math.ceil(19419 / page_size)
         if page > total:
             nx_page = None
         else:
