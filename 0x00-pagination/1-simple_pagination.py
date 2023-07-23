@@ -40,13 +40,17 @@ class Server:
         '''get pages and print'''
         # assert type(page) == int and page >= 0
         # assert type(page_size) == int and page_size > 0
+        pages = []
         try:
             assert type(page) == int and page >= 0
             assert type(page_size) == int and page_size > 0
-            ind_range = index_range(page = 1, page_size = 10)
+            ind_range = index_range(page, page_size)
             first: int = ind_range[0]
             last: int = ind_range[1]
-            for page in range(first, last + 1):
-                return (page)
+            res = self.dataset()
+            for page in range(first, last):
+                # pages.append(self.dataset[page])
+                pages.append(res[page])
+            return (pages)
         except IndexError:
-            return None
+            return pages
