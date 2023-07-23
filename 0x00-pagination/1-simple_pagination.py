@@ -38,13 +38,15 @@ class Server:
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
         '''get pages and print'''
-        assert type(page) == int and page >= 0
-        assert type(page_size) == int and page_size > 0
+        # assert type(page) == int and page >= 0
+        # assert type(page_size) == int and page_size > 0
         try:
-            ind_range = index_range(page, page_size)
-            first = ind_range[0]
-            last = ind_range[1]
+            assert type(page) == int and page >= 0
+            assert type(page_size) == int and page_size > 0
+            ind_range = index_range(page = 1, page_size = 10)
+            first: int = ind_range[0]
+            last: int = ind_range[1]
             for page in range(first, last + 1):
                 return (page)
         except IndexError:
-            return []
+            return None
