@@ -2,7 +2,7 @@
 '''simple pagination for API'''
 
 
-from typing import Tuple, List, Dict, Union, TypedDict
+from typing import Tuple, List, Dict, Union
 import csv
 import math
 
@@ -57,7 +57,6 @@ class Server:
 
     def get_hyper(self, page: int = 1, page_size: int = 10) -> \
             Dict[str, Union[int, None, List[List]]]:
-        '''defining the function'''
         my_dict = {}
         res = self.dataset()
         # total = len(res)
