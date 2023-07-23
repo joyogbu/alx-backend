@@ -53,13 +53,18 @@ class Server:
                 pages.append(res[page])
             return (pages)
         except IndexError:
-            return pages
+            return []
 
-    def get_hyper(self, page: int = 1, page_size: int = 10) -> Dict[str, Union[int, List[List]]]:
+    def get_hyper(self, page: int = 1, page_size: int = 10) -> \
+            Dict[str, Union[int, List[List]]]:
         my_dict = {}
         res = self.dataset()
-        total = len(res)
-        nx_page = page + 1
+        # total = len(res)
+        total = math.ceil(19419 / page_size)
+        if page > total:
+            nx_page = None
+        else:
+            nx_page = page + 1
         if page == 1:
             pv_page = None
         else:
