@@ -56,13 +56,20 @@ class Server:
             return pages
 
     def get_hyper(self, page: int = 1, page_size: int = 10) -> List[List]:
-            my_dict = {}
-            my_pages = self.get_page(page, page_size)
-            length = len(my_pages)
-            my_dict['page_size'] = length
-            my_dict['page'] = page
-            my_dict['data'] = my_pages
-            my_dict['next_page'] = 0
-            my_dict['prev_page'] = 0
-            my_dict['total_pages'] = 0
-            return (my_dict)
+        my_dict = {}
+        res = self.dataset()
+        total = len(res)
+        nx_page = page + 1
+        if page == 1:
+            pv_page = None
+        else:
+            pv_page = page - 1
+        my_pages = self.get_page(page, page_size)
+        length = len(my_pages)
+        my_dict['page_size'] = length
+        my_dict['page'] = page
+        my_dict['data'] = my_pages
+        my_dict['next_page'] = nx_page
+        my_dict['prev_page'] = pv_page
+        my_dict['total_pages'] = total
+        return (my_dict)
