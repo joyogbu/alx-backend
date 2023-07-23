@@ -55,7 +55,7 @@ class Server:
         except IndexError:
             return []
 
-    def get_hyper(self, page: int = 1, page_size: int = 10) -> TypedDict:
+    def get_hyper(self, page: int = 1, page_size: int = 10) -> Dict[str, object]:
         '''defining the function'''
         my_dict = {}
         res = self.dataset()
