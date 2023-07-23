@@ -79,5 +79,5 @@ class Server:
         my_dict['data'] = my_pages
         my_dict['next_page'] = nx_page
         my_dict['prev_page'] = pv_page
-        my_dict['total_pages'] = total
+        my_dict['total_page'] = total
         return (my_dict)
