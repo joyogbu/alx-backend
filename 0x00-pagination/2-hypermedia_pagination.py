@@ -63,17 +63,38 @@ class Server:
         '''if page_size == 2:
             total = math.floor(dataset_total / page_size)
         else:'''
-        total = math.ceil(19418 / page_size)
-        if page > total:
-            nx_page = None
-        else:
-            nx_page = page + 1
-        if page == 1:
-            pv_page = None
-        else:
-            pv_page = page - 1
-        my_pages = self.get_page(page, page_size)
-        length = len(my_pages)
+        nx_page = None
+        pv_page = None
+        try:
+            my_pages = self.get_page(page, page_size)
+            length = len(my_pages)
+            total = math.ceil(dataset_total / page_size)
+            if page > total:
+                nx_page = None
+            else:
+                nx_page = page + 1
+            if page == 1:
+                pv_page = None
+            else:
+                pv_page = page - 1
+        except AssertionError:
+            my_pages = []
+            length = 0
+            if type(page_size) == int and page_size > 0:
+                total = math.ceil(dataset_total / page_size)
+                nx_page = 1
+            elif type(page_size) == int and page_size == 0:
+                page = None
+            if type(page) == int and page > 0 and total is not None:
+                if page > total:
+                    nx_page = None
+                else:
+                    nx_page = page + 1
+                    if page == 1:
+                        pv_page = None
+                    else:
+                        pv_page = page - 1
+        # length = len(my_pages)
         my_dict['page_size'] = length
         my_dict['page'] = page
         my_dict['data'] = my_pages
