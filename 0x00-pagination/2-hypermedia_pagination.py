@@ -59,11 +59,11 @@ class Server:
         '''defining the function'''
         my_dict = {}
         res = self.dataset()
-        # total = len(res)
+        dataset_total = len(res)
         if page_size == 2:
-            total = math.floor(19419 / page_size)
+            total = math.floor(dataset_total / page_size)
         else:
-            total = math.ceil(19419 / page_size)
+            total = math.ceil(dataset_total / page_size)
         if page > total:
             nx_page = None
         else:
