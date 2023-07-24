@@ -65,6 +65,7 @@ class Server:
         else:'''
         nx_page = None
         pv_page = None
+        total = None
         try:
             my_pages = self.get_page(page, page_size)
             length = len(my_pages)
@@ -94,6 +95,8 @@ class Server:
                         pv_page = None
                     else:
                         pv_page = page - 1
+            else:
+                page = None
         # length = len(my_pages)
         my_dict['page_size'] = length
         my_dict['page'] = page
