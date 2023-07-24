@@ -74,10 +74,10 @@ class Server:
                 nx_page = None
             else:
                 nx_page = page + 1
-            if page == 1:
-                pv_page = None
-            else:
+            if page >= 2:
                 pv_page = page - 1
+            else:
+                pv_page = None
         except AssertionError:
             my_pages = []
             length = 0
@@ -91,10 +91,10 @@ class Server:
                     nx_page = None
                 else:
                     nx_page = page + 1
-                    if page == 1:
-                        pv_page = None
-                    else:
+                    if page >= 2:
                         pv_page = page - 1
+                    else:
+                        pv_page = None
             else:
                 page = None
         # length = len(my_pages)
