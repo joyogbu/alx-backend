@@ -55,8 +55,7 @@ class Server:
         except IndexError:
             return []
 
-    def get_hyper(self, page: int = 1, page_size: int = 10) ->\
-            Dict[str, Union[int, None, List[List]]]:
+    def get_hyper(self, page: int = 1, page_size: int = 10) -> Dict:
         '''defining the function'''
         my_dict = {}
         res = self.dataset()
