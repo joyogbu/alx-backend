@@ -70,7 +70,7 @@ class Server:
             my_pages = self.get_page(page, page_size)
             length = len(my_pages)
             total = math.ceil(dataset_total / page_size)
-            if page > total:
+            if page > total or page == length:
                 nx_page = None
             else:
                 nx_page = page + 1
