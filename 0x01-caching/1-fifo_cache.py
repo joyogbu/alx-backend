@@ -19,12 +19,14 @@ class FIFOCache(BaseCaching):
         # self.my_dict[key] = item
         if key is None or item is None:
             pass
-        self.my_dict[key] = item
-        if length > BaseCaching.MAX_ITEMS:
+        # if key not in self.my_dict.keys():
+        # self.my_dict[key] = item
+        if length >= BaseCaching.MAX_ITEMS:
             key_list = list(self.my_dict.keys())
             first_key = key_list[0]
             del self.my_dict[first_key]
-            print("DISCARD {}".format(first_key), end='\n')
+            print("DISCARD: {}".format(first_key), end='\n')
+        self.my_dict[key] = item
         # print()
 
     def get(self, key):
