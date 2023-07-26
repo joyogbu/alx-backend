@@ -2,7 +2,8 @@
 '''BasicCache that inherits from BaseCaching and is a caching'''
 
 
-class BaseCaching():
+from base_caching import BaseCaching
+'''class BaseCaching():
     """ BaseCaching defines:
       - constants of your caching system
       - where your data are stored (in a dictionary)
@@ -31,11 +32,12 @@ class BaseCaching():
         """ Get an item by key
         """
         raise NotImplementedError("get must be implemented in\
-                your cache class")
+                your cache class")'''
 
 
 class BasicCache(BaseCaching):
     '''BasicCache class that inherits from BaseCaching'''
+
     def __init__(self):
         '''defining the class'''
         super().__init__()
