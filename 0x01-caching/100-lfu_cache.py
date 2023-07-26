@@ -23,7 +23,7 @@ class LFUCache(BaseCaching):
         # self.my_dict[key] = item
         if length >= BaseCaching.MAX_ITEMS:
             key_list = list(self.my_dict.keys())
-            first_key = key_list[0]
+            first_key = key_list[-1]
             del self.my_dict[first_key]
             print("DISCARD: {}".format(first_key), end='\n')
         self.my_dict[key] = item
