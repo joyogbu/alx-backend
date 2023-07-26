@@ -18,7 +18,7 @@ class MRUCache(BaseCaching):
         length = len(self.my_dict)
         # self.my_dict[key] = item
         if key is None or item is None:
-            pass
+            return
         # if key not in self.my_dict.keys():
         # self.my_dict[key] = item
         if length >= BaseCaching.MAX_ITEMS:
