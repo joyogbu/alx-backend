@@ -18,6 +18,7 @@ def get_locale():
     return request.accept_languages.best_match(app.config['LANGUAGES'])
 """
 
+
 @app.route('/', strict_slashes=False)
 def index():
     '''defining the index page'''
