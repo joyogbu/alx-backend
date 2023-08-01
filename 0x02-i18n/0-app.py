@@ -7,16 +7,6 @@ from flask import Flask, render_template
 
 
 app = Flask(__name__)
-# app.config.from_object(config)
-# app.config['BABEL_DEFAULT_LOCALE'] = "en"
-# app.config['BABEL_DEFAULT_TIMEZONE'] = 'UTC'
-
-
-"""@babel.localeselector
-def get_locale():
-    '''defining the function'''
-    return request.accept_languages.best_match(app.config['LANGUAGES'])
-"""
 
 
 @app.route('/', strict_slashes=False)
