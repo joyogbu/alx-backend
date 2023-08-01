@@ -2,6 +2,9 @@
 '''module for get locale'''
 
 
+from flask import request
+
+
 @babel.localeselector
 def get_locale() -> str:
     '''defining the function'''
