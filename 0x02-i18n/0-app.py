@@ -9,9 +9,9 @@ app = Flask(__name__)
 
 
 @app.route('/', strict_slashes=False)
-def index():
+"""def index():
     '''defining the index page'''
-    return render_template('index.html')
+    return render_template('index.html')"""
 
 
 '''running the flask app'''
