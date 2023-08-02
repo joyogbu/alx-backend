@@ -2,11 +2,12 @@
 '''module for flask babel'''
 
 
+from flask import Flask
 from flask_babel import Babel
 
 
 app = Flask(__name__)
-app.config.from_pyfile('mysettings.cfg')
+# app.config.from_pyfile('mysettings.cfg')
 app.config['BABEL_DEFAULT_LOCALE'] = 'en'
 app.config['BABEL_DEFAULT_TIMEZONE'] = 'UTC'
 
