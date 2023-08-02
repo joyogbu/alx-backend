@@ -18,10 +18,8 @@ babel = Babel(app)
 class Config(object):
     '''defining class for babel configurations'''
     LANGUAGES = ["en", "fr"]
-
-app.config.from_object(Config)
-app.config['BABEL_DEFAULT_LOCALE'] = 'en'
-app.config['BABEL_DEFAULT_TIMEZONE'] = 'UTC'
+    BABEL_DEFAULT_LOCALE = "en"
+    BABEL_DEFAULT_TIMEZONE = 'UTC'
 
 
 if __name__ == "__main__":
