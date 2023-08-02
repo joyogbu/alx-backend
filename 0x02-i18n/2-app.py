@@ -21,3 +21,8 @@ def get_locale() -> str:
 def index():
     '''defining the function'''
     return render_template('2-index.html')
+
+
+'''runnng the app'''
+if __name__ == "__main__":
+    app.run(host='0.0.0.0')
