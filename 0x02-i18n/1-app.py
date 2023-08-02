@@ -22,3 +22,7 @@ class Config(object):
 # app.config.from_object(Config)
 # app.config['BABEL_DEFAULT_LOCALE'] = 'en'
 # app.config['BABEL_DEFAULT_TIMEZONE'] = 'UTC'
+
+
+if __name__ == "__main__":
+    app.run(host='0.0.0.0')
