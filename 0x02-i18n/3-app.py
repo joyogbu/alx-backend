@@ -1,2 +1,18 @@
 #!/usr/bin/env python3
 '''module for parameterize template'''
+
+
+from flask import Flask, render_template
+from flask_babel import Babel, gettext as _
+
+
+app = flask(__name__)
+babel = Babel(app)
+
+
+@app.route('/', strict_slashes=False)
+def index():
+    '''defining the gettext function'''
+    home_title = _(Welcome to Holberton)
+    home_header = _(Hello world)
+    return render_template('3-index.html', home_title=home_title, home_header=home_header)
