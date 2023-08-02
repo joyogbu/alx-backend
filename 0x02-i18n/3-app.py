@@ -15,9 +15,10 @@ def index():
     '''defining the gettext function'''
     home_title = _('Welcome to Holberton')
     home_header = _('Hello world')
-    return render_template('3-index.html', home_title=home_title, home_header=home_header)
+    return render_template('3-index.html', home_title=home_title,
+                           home_header=home_header)
 
 
-'''running the flask app'''
 if __name__ == "__main__":
+    '''runing rhe flask qpp'''
     app.run(host='0.0.0.0')
