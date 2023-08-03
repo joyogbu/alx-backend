@@ -20,10 +20,10 @@ def get_locale() -> str:
     return request.accept_languages.best_match(app.config['LANGUAGES'])
 
 
-@app.route('/')
+@app.route('/<locale>')
 def index():
     '''defining the function'''
-    return render_template('2-index.html')
+    return render_template('4-index.html')
 
 
 '''runnng the app'''
