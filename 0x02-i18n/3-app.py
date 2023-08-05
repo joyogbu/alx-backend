@@ -14,7 +14,7 @@ babel = Babel(app)
 def index():
     '''defining the gettext function'''
     home_title = _('Welcome to Holberton')
-    home_header = _('Hello world')
+    home_header = _('Hello world!')
     return render_template('3-index.html', home_title=home_title,
                            home_header=home_header)
 
