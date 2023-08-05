@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+        <head>
+                <title>Welcome to Holberton</title>
+        </head>
+        <body>
+                <h1>Hello world!</h2>
+		{% if user %}
+			<p>You are logged in as {{user.name}}</p>
+		{% else %}
+			<p>You are logged in</p>
+		{% endif %}
+        </body>
+</html>
