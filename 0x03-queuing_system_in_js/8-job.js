@@ -13,23 +13,28 @@ client.on('ready', () => {
 });
 const kue = require('kue');
 const queue = kue.createQueue();
-function createPushNotificationsJobs(jobs, queue) {
-	if (Array.isArray(jobs) === false) {
+const createPushNotificationsJobs = function createPushNotificationsJobs(jobs, queue) {
+	if (jobs.constructor !== Array) {
 		throw new Error('Jobs is not an array');
 	}
-	for (myJob in jobs) {
+	for (const myJob of jobs) {
 		const job = queue.create('push_notification_code_3', myJob).save( function(err) {
 			if (err) {
 			  console.log(err);
 			} else {
 			  console.log(`Notification job created: ${job.id}`);
 			}
-		}
-	}
+		});
+	
 	job.on('complete', function(result) {
 		console.log('Notification job completed');
 	})
 	job.on('failed', function(err) {
 		console.log('Notification job failed');
 	});
+	job.on('progress', function(progress, data) {
+		console.log(`Notification job ${job.id} ${progress} complete`);
+	});
+	}
 }
+module.exports = createPushNotificationsJobs;
