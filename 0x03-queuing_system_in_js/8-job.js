@@ -13,7 +13,7 @@ client.on('ready', () => {
 });
 const kue = require('kue');
 const queue = kue.createQueue();
-const createPushNotificationsJobs = function createPushNotificationsJobs(jobs, queue) {
+function createPushNotificationsJobs(jobs, queue) {
 	if (jobs.constructor !== Array) {
 		throw new Error('Jobs is not an array');
 	}
